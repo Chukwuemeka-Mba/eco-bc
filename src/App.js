@@ -1,23 +1,34 @@
 import React from "react";
 import Navbar from "./components/Navbar/Navbar";
 import Footer from "./components/Footer/Footer";
-import Login from "./components/login/login";
+import LoginPage from "./components/login/login";
 import Signup from "./components/signup/signup";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import Homepage from "./components/HomePage/Homepage";
+import Chatbox from "./components/chatbox/chatbox";
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Navbar />
-        <Footer />
         <div className="">
           <Switch>
-            <Route path="/login">
-              <Login />
+            <Route exact path="/">
+              <Homepage />
+            </Route>
+            <Route exact path="/signup">
+              <Signup />
+            </Route>
+            <Route exact path="/login">
+              <LoginPage />
+            </Route>
+            <Route exact path="/chatbox">
+              <Chatbox />
             </Route>
           </Switch>
         </div>
+        <Footer />
       </div>
     </Router>
   );
