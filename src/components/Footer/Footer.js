@@ -11,7 +11,7 @@ const setStlyes = makeStyles({
     backgroundColor: "",
     position: "fixed",
     bottom: 0,
-    minWidth: "100vh",
+    width: "100%",
   },
 });
 function Footer() {

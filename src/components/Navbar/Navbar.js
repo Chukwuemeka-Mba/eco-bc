@@ -11,9 +11,15 @@ import Avatar from "@mui/material/Avatar";
 import Button from "@mui/material/Button";
 import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
+import { makeStyles } from "@material-ui/core/styles";
 
-const pages = ["Products", "Pricing", "Blog"];
-const settings = ["Profile", "Account", "Dashboard", "Logout"];
+const useStyles = makeStyles({
+  appBar: {
+    backgroundColor: "#b389ff",
+  },
+});
+const pages = ["Ideas", "Leaderboard", "Discover"];
+const settings = ["Profile", "Chats", "Login"];
 
 function Navbar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -34,9 +40,10 @@ function Navbar() {
     setAnchorElUser(null);
   };
 
+  const classes = useStyles();
   return (
     <div>
-      <AppBar position="static">
+      <AppBar className={classes.appBar} position="static">
         <Container maxWidth="xl">
           <Toolbar disableGutters>
             <Typography
@@ -45,7 +52,7 @@ function Navbar() {
               component="div"
               sx={{ mr: 2, display: { xs: "none", md: "flex" } }}
             >
-              LOGO
+              Eco BC
             </Typography>
 
             <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -90,7 +97,7 @@ function Navbar() {
               component="div"
               sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}
             >
-              LOGO
+              Eco BC
             </Typography>
             <Box sx={{ flexGrow: 1, display: { xs: "none", md: "flex" } }}>
               {pages.map((page) => (
