@@ -6,7 +6,7 @@ import Signup from "./components/signup/signup";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Homepage from "./components/HomePage/Homepage";
 import Chatbox from "./components/chatbox/chatbox";
-
+import Click from "./components/click-image/click";
 function App() {
   return (
     <Router>
@@ -25,6 +25,9 @@ function App() {
             </Route>
             <Route exact path="/chatbox">
               <Chatbox />
+            </Route>
+            <Route exact path="/click">
+              <Click />
             </Route>
           </Switch>
         </div>
